@@ -1,0 +1,53 @@
+<div id="burger-homepage">
+
+     <div class="parallax-container">
+      <div class="parallax"><img src="/assets/img/wideMinions.jpg"></div>
+    </div>
+
+<!--     End of Parallax -->
+  
+    <div class="container">        
+              <table class="table table-hover" id='burger-table'>
+                <thead>
+                  <tr>
+                    <th>Burger Id</th>
+                    <th>Burger Name</th>
+                    <th>Devour It</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {{#each burgers}}
+                      {{#unless this.devoured}}
+                      <tr>
+                        <td>{{this.id}}</td>
+                        <td>{{this.burger_name}}</td>
+                        <td><form action='/{{this.id}}?_method=PUT' method='POST'>
+                            <input type='hidden' name='devoured' value='true'>
+                            <button type='submit'> <img src="/assets/img/minion.jpeg" width=100></button>
+                            </form></td>
+                      </tr>
+                      {{/unless}}
+                    {{/each}} 
+                      <tr>
+                        <td> <form class="create-update-form" action="/" method="POST">
+                            <button type="submit"><img src="/assets/img/minionCook.jpg" width=100></button></td>
+                        <td></td>
+                        <td> 
+                          <div class="form-group input-field col s6">
+                          <input placeholder="Add a new Burger" name="burger_name" type="text">
+                            </form></div>
+                        </td>
+                      </tr>
+                </tbody>
+              </table>
+    </div>
+         <div class="parallax-container">
+      <div class="parallax"><img src="/assets/img/minionBottom.jpg"></div>
+    </div>
+</div>
+
+    <script>
+          $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+    </script>
