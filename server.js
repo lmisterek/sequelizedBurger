@@ -33,7 +33,7 @@ app.set("view engine", "handlebars");
 
 // Routes
 // ================================================================================
-require("./routes/burger-api-routes.js")(app);
+require("./routes/burger-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // ================================================================================

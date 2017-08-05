@@ -19,7 +19,22 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     db.Burger.findAll({})
     .then(function(dbPost) {
-      res.render('index', dbPost);
+    	
+    	var burgers = [];
+
+    	// Create the data for the view
+    	for (var i = 0; i < dbPost.length; i++) {
+    		var burger = {
+    			id: dbPost[i].dataValues.id,
+    			burger_name: dbPost[i].dataValues.burger_name,
+    			devoured: dbPost[i].dataValues.deboured
+    		};
+
+    		// Add each burger to the burgers array
+    		burgers.push(burger);
+    	}
+
+      res.render('index', {burgers: burgers});
     });
   });
 
@@ -27,5 +42,7 @@ module.exports = function(app) {
   	db.Burger.create({
   		burger_name: req.body.burger_name
   	});
+
+  	res.redirect("/");
   });
 };
