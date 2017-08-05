@@ -1,2 +1,2 @@
-# hamburger
-Homework assignment from Week 14
+# sequelizedBurger
+Homework assignment from Week 15
