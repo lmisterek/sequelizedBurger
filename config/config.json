@@ -14,16 +14,11 @@
     "dialect": "mysql"
   },
   "production": {
-    // "username": "mxl6k5ixfabck70y",
-    // "password": "qzac47l3wxn2vfyp",
-    // "database": "database_production",
-    // "host": " dyud5fa2qycz1o3v.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    "dialect": "mysql",
-    "use_env_variable": "JAWSDB_URL"
-    // "port": 3306
+    "username": "mxl6k5ixfabck70y",
+    "password": "qzac47l3wxn2vfyp",
+    "database": "database_production",
+    "host": " dyud5fa2qycz1o3v.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
   }
 }
-
-// Connection string
-//mysql://mxl6k5ixfabck70y:qzac47l3wxn2vfyp@dyud5fa2qycz1o3v.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/js2wdue90s46lfbn
-

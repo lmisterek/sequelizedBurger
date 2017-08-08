@@ -1,4 +1,3 @@
-
 // This will create the burgers table in sequelize
 module.exports = function(sequelize, DataTypes) {
 
