@@ -27,12 +27,13 @@ module.exports = function(app) {
     		var burger = {
     			id: dbPost[i].dataValues.id,
     			burger_name: dbPost[i].dataValues.burger_name,
-    			devoured: dbPost[i].dataValues.deboured
+    			devoured: dbPost[i].dataValues.devoured
     		};
 
     		// Add each burger to the burgers array
     		burgers.push(burger);
     	}
+      console.log(burgers);
 
       res.render('index', {burgers: burgers});
     });
@@ -45,4 +46,18 @@ module.exports = function(app) {
 
   	res.redirect("/");
   });
-};
+
+  // this route is for updating the database to show that the burger has been devoured
+  app.put("/:id", function(req, res) {
+  //var condition = "id = " + req.params.id;
+
+  //console.log("condition", condition);
+  console.log(req.body.devoured);
+  console.log(req.params.id);
+    db.Burger.update(
+      {devoured: req.body.devoured},
+      {where: {id: req.params.id}}
+      );
+    res.redirect("/");
+  });
+};  // end of routes
