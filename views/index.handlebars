@@ -20,7 +20,6 @@
                       {{#unless this.devoured}}
                       <tr>
                         <td>{{this.id}}</td>
-                        <td>{{this.devoured}}</td>
                         <td>{{this.burger_name}}</td>
                         <td><form action='/{{this.id}}?_method=PUT' method='POST'>
                             <input type='hidden' name='devoured' value='true'>
